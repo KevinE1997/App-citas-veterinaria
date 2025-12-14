@@ -1,0 +1,16 @@
+﻿D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Modelos\Cita.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Modelos\Veterinario.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Modelos\Paciente.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Properties\AssemblyInfo.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Veterinario.asmx.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Paciente.asmx.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Cita.asmx.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Usuario.asmx.cs
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Web.config
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Veterinario.asmx
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Paciente.asmx
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Cita.asmx
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\WS\Usuario.asmx
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\packages.config
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Web.Debug.config
+D:\Proyectos Visual Studio\Salud_V1\Salud\Salud\Web.Release.config

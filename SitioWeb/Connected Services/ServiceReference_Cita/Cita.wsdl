@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="registrarCita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="paciente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaSeleccionada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hora" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="medico" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registrarCitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registrarCitaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPacientes">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarPacientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPacientesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarVeterinarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarVeterinariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarVeterinariosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraerCita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="condicion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraerCitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraerCitaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="íd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarCitaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarCita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="paciente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hora" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="doctor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarCitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modificarCitaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="registrarCitaSoapIn">
+    <wsdl:part name="parameters" element="tns:registrarCita" />
+  </wsdl:message>
+  <wsdl:message name="registrarCitaSoapOut">
+    <wsdl:part name="parameters" element="tns:registrarCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPacientesSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPacientes" />
+  </wsdl:message>
+  <wsdl:message name="listarPacientesSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPacientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarVeterinariosSoapIn">
+    <wsdl:part name="parameters" element="tns:listarVeterinarios" />
+  </wsdl:message>
+  <wsdl:message name="listarVeterinariosSoapOut">
+    <wsdl:part name="parameters" element="tns:listarVeterinariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraerCitaSoapIn">
+    <wsdl:part name="parameters" element="tns:TraerCita" />
+  </wsdl:message>
+  <wsdl:message name="TraerCitaSoapOut">
+    <wsdl:part name="parameters" element="tns:TraerCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarCitaSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarCita" />
+  </wsdl:message>
+  <wsdl:message name="eliminarCitaSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarCitaSoapIn">
+    <wsdl:part name="parameters" element="tns:modificarCita" />
+  </wsdl:message>
+  <wsdl:message name="modificarCitaSoapOut">
+    <wsdl:part name="parameters" element="tns:modificarCitaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_CitaSoap">
+    <wsdl:operation name="registrarCita">
+      <wsdl:input message="tns:registrarCitaSoapIn" />
+      <wsdl:output message="tns:registrarCitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPacientes">
+      <wsdl:input message="tns:listarPacientesSoapIn" />
+      <wsdl:output message="tns:listarPacientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarVeterinarios">
+      <wsdl:input message="tns:listarVeterinariosSoapIn" />
+      <wsdl:output message="tns:listarVeterinariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerCita">
+      <wsdl:input message="tns:TraerCitaSoapIn" />
+      <wsdl:output message="tns:TraerCitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCita">
+      <wsdl:input message="tns:eliminarCitaSoapIn" />
+      <wsdl:output message="tns:eliminarCitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarCita">
+      <wsdl:input message="tns:modificarCitaSoapIn" />
+      <wsdl:output message="tns:modificarCitaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_CitaSoap" type="tns:WebService_CitaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="registrarCita">
+      <soap:operation soapAction="http://tempuri.org/registrarCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPacientes">
+      <soap:operation soapAction="http://tempuri.org/listarPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVeterinarios">
+      <soap:operation soapAction="http://tempuri.org/listarVeterinarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerCita">
+      <soap:operation soapAction="http://tempuri.org/TraerCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCita">
+      <soap:operation soapAction="http://tempuri.org/eliminarCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarCita">
+      <soap:operation soapAction="http://tempuri.org/modificarCita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_CitaSoap12" type="tns:WebService_CitaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="registrarCita">
+      <soap12:operation soapAction="http://tempuri.org/registrarCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPacientes">
+      <soap12:operation soapAction="http://tempuri.org/listarPacientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVeterinarios">
+      <soap12:operation soapAction="http://tempuri.org/listarVeterinarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerCita">
+      <soap12:operation soapAction="http://tempuri.org/TraerCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCita">
+      <soap12:operation soapAction="http://tempuri.org/eliminarCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarCita">
+      <soap12:operation soapAction="http://tempuri.org/modificarCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_Cita">
+    <wsdl:port name="WebService_CitaSoap" binding="tns:WebService_CitaSoap">
+      <soap:address location="https://localhost:44303/WS/Cita.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_CitaSoap12" binding="tns:WebService_CitaSoap12">
+      <soap12:address location="https://localhost:44303/WS/Cita.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

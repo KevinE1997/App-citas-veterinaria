@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mostrarVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="condicion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarVeterinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarVeterinarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registrarVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registrarVeterinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registrarVeterinarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="íd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarVeterinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarVeterinarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarVeterinario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarVeterinarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modificarVeterinarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mostrarVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="mostrarVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:registrarVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="registrarVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:registrarVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="eliminarVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarVeterinarioSoapIn">
+    <wsdl:part name="parameters" element="tns:modificarVeterinario" />
+  </wsdl:message>
+  <wsdl:message name="modificarVeterinarioSoapOut">
+    <wsdl:part name="parameters" element="tns:modificarVeterinarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DoctorSoap">
+    <wsdl:operation name="mostrarVeterinario">
+      <wsdl:input message="tns:mostrarVeterinarioSoapIn" />
+      <wsdl:output message="tns:mostrarVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarVeterinario">
+      <wsdl:input message="tns:registrarVeterinarioSoapIn" />
+      <wsdl:output message="tns:registrarVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarVeterinario">
+      <wsdl:input message="tns:eliminarVeterinarioSoapIn" />
+      <wsdl:output message="tns:eliminarVeterinarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarVeterinario">
+      <wsdl:input message="tns:modificarVeterinarioSoapIn" />
+      <wsdl:output message="tns:modificarVeterinarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DoctorSoap" type="tns:DoctorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarVeterinario">
+      <soap:operation soapAction="http://tempuri.org/mostrarVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarVeterinario">
+      <soap:operation soapAction="http://tempuri.org/registrarVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarVeterinario">
+      <soap:operation soapAction="http://tempuri.org/eliminarVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarVeterinario">
+      <soap:operation soapAction="http://tempuri.org/modificarVeterinario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DoctorSoap12" type="tns:DoctorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/mostrarVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/registrarVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/eliminarVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarVeterinario">
+      <soap12:operation soapAction="http://tempuri.org/modificarVeterinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Doctor">
+    <wsdl:port name="DoctorSoap" binding="tns:DoctorSoap">
+      <soap:address location="https://localhost:44303/WS/Veterinario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DoctorSoap12" binding="tns:DoctorSoap12">
+      <soap12:address location="https://localhost:44303/WS/Veterinario.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

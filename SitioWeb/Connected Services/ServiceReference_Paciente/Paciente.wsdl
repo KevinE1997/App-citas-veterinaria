@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mostrarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="condicion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarPacienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registrarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registrarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registrarPacienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="validarUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="íd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarPacienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modificarPacienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mostrarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="mostrarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="registrarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:registrarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="registrarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:registrarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:validarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="validarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:validarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:modificarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="modificarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:modificarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PacienteSoap">
+    <wsdl:operation name="mostrarPaciente">
+      <wsdl:input message="tns:mostrarPacienteSoapIn" />
+      <wsdl:output message="tns:mostrarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarPaciente">
+      <wsdl:input message="tns:registrarPacienteSoapIn" />
+      <wsdl:output message="tns:registrarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validarUsuario">
+      <wsdl:input message="tns:validarUsuarioSoapIn" />
+      <wsdl:output message="tns:validarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPaciente">
+      <wsdl:input message="tns:eliminarPacienteSoapIn" />
+      <wsdl:output message="tns:eliminarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarPaciente">
+      <wsdl:input message="tns:modificarPacienteSoapIn" />
+      <wsdl:output message="tns:modificarPacienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PacienteSoap" type="tns:PacienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarPaciente">
+      <soap:operation soapAction="http://tempuri.org/mostrarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarPaciente">
+      <soap:operation soapAction="http://tempuri.org/registrarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarUsuario">
+      <soap:operation soapAction="http://tempuri.org/validarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPaciente">
+      <soap:operation soapAction="http://tempuri.org/eliminarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarPaciente">
+      <soap:operation soapAction="http://tempuri.org/modificarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PacienteSoap12" type="tns:PacienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/mostrarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/registrarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/validarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/eliminarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarPaciente">
+      <soap12:operation soapAction="http://tempuri.org/modificarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Paciente">
+    <wsdl:port name="PacienteSoap" binding="tns:PacienteSoap">
+      <soap:address location="https://localhost:44303/WS/Paciente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PacienteSoap12" binding="tns:PacienteSoap12">
+      <soap12:address location="https://localhost:44303/WS/Paciente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
